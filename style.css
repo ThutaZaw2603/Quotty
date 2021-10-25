@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600&family=Sansita&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Sansita", sans-serif;
+  color: rgba(240, 235, 235, 0.829);
+}
+
+body {
+  background: #17171B url("img/wave7.svg") no-repeat fixed;
+  background-size: cover;
+}
+
+svg {
+  position: absolute;
+  z-index: -1;
+}
+
+#s1 {
+  top: 20%;
+  left: 20%;
+}
+
+#s2 {
+  top: 60%;
+  left: 10%;
+}
+
+#s3 {
+  right: 30%;
+  bottom: 30%;
+}
+
+#s4 {
+  bottom: 30%;
+  left: 40%;
+}
+
+#s5 {
+  top: 35%;
+  left: 25%;
+}
+
+#s6 {
+  right: 15%;
+  top: 40%;
+}
+
+.nav {
+  border-bottom: 1px solid #222E36;
+}
+
+.nav ul {
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: row;
+      -ms-flex: row;
+          flex: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style-type: none;
+}
+
+.nav ul li a {
+  font-family: "Red Hat Display", sans-serif;
+  text-decoration: none;
+  color: rgba(240, 235, 235, 0.829);
+  text-align: center;
+  font-size: 26px;
+}
+
+.nav ul li #logo {
+  margin-left: 30px;
+}
+
+.nav ul li #about {
+  margin: 0 30px 0 0;
+  opacity: .8;
+}
+
+.mainDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60vh;
+}
+
+.mainDiv p {
+  margin-top: 10px;
+  text-align: right;
+  opacity: .7;
+  -webkit-animation: alert 10s ease-in infinite;
+          animation: alert 10s ease-in infinite;
+}
+
+.mainDiv .buttonDiv {
+  position: relative;
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mainDiv .buttonDiv button {
+  width: 120px;
+  height: 40px;
+  background: none;
+  font-size: 18px;
+  border: 0.4px solid rgba(240, 235, 235, 0.829);
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.mainDiv .buttonDiv button:hover {
+  background-color: #222E36;
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.mainDiv .buttonDiv button:active {
+  background-color: #222E36;
+  -webkit-box-shadow: 0 5px #666;
+          box-shadow: 0 5px #666;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.mainDiv .buttonDiv::before {
+  content: attr(data-content);
+  position: absolute;
+  top: -80%;
+  -webkit-animation: alert  1s;
+          animation: alert  1s;
+  opacity: .8;
+  padding: 10px;
+}
+
+.mainDiv .quoteDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 600px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 4rem;
+}
+
+.mainDiv .quoteDiv h4 {
+  color: rgba(240, 235, 235, 0.829);
+  text-align: center;
+  font-size: 27px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  line-height: 30px;
+  -webkit-animation: alert 10s ease-in infinite;
+          animation: alert 10s ease-in infinite;
+}
+
+.mainDiv .quoteDiv h4 #quoteIcon {
+  font-size: 50px;
+}
+
+@-webkit-keyframes alert {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateZ(0px);
+            transform: translateZ(0px);
+  }
+  25% {
+    opacity: 100%;
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+  50% {
+    opacity: 100%;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes alert {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateZ(0px);
+            transform: translateZ(0px);
+  }
+  25% {
+    opacity: 100%;
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+  50% {
+    opacity: 100%;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    background: #17171B url("img/phoneWave.svg") no-repeat fixed;
+    background-size: cover;
+  }
+  .nav ul li a {
+    font-size: 20px;
+  }
+  .mainDiv {
+    height: 70vh;
+  }
+  .mainDiv .quoteDiv {
+    width: 300px;
+  }
+  .mainDiv .quoteDiv h4 {
+    font-size: 20px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600&family=Sansita&display=swap');
+
+
+//Variable
+$logo-font : 'Red Hat Display', sans-serif;
+$primary-font : 'Sansita', sans-serif;
+$primary-color : #17171B;
+$big-wave-color : #222E36;
+$small-wave-color : #181E22;
+$primary-font-color : rgba(240, 235, 235, 0.829);
+
+*{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   font-family: $primary-font;
+   color:$primary-font-color;
+}
+
+body{
+    background: $primary-color url('img/wave7.svg') no-repeat fixed ;
+    
+    background-size: cover;
+}
+
+
+svg{
+    position:absolute;
+    z-index: -1;
+}
+
+#s1{
+    top:20%;
+    left:20%
+}
+
+#s2{
+    top:60%;
+    left:10%;
+}
+
+#s3{
+    right:30%;
+    bottom:30%;
+}
+#s4{
+    bottom: 30%;
+    left:40%;
+}
+#s5{
+    top: 35%;
+    left:25%;
+}
+#s6{
+    right: 15%;
+    top:40%;
+}
+
+
+
+.nav{
+    border-bottom: 1px solid $big-wave-color;
+    ul{
+        padding: 30px;
+        display: flex;
+        flex:row;
+        justify-content: space-between;
+        list-style-type:none;
+        li{
+            
+            a{ 
+                font-family: $logo-font;
+                text-decoration: none;
+                color:$primary-font-color;
+                text-align: center;
+                font-size: 26px;
+            }
+            #logo{
+                margin-left: 30px; 
+    
+            }
+            #about{
+                margin:0 30px 0 0;
+                opacity: .8;
+               
+            }
+        }
+    }
+}
+
+.mainDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // border:1px solid red;
+    height: 60vh;
+    // position: relative;
+        // border:0.6px solid green;
+        p{
+            margin-top: 10px;
+            text-align: right;
+            opacity: .7;
+            animation: alert 10s ease-in infinite;
+        }
+        .buttonDiv{
+            position: relative;
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+
+            button{
+                width: 120px;
+                height: 40px;
+                background:none;
+                font-size: 18px;
+                border:.4px solid $primary-font-color;
+                border-radius: 14px;
+                cursor: pointer;
+                // box-shadow: 10px 11px 29px -16px rgb(117, 117, 117);
+            }
+            
+            button:hover{
+                background-color:$big-wave-color;
+           
+                transform:translateY(-4px);
+                transition: 1s;
+            }
+            button:active{
+                background-color:$big-wave-color;
+                box-shadow: 0 5px #666;
+                transform: translateY(10px);
+                transition: .3s;
+                
+            }
+        }
+        .buttonDiv::before{
+            content: attr(data-content);
+            position:absolute;
+            top:-80%;
+            animation:alert  1s ;
+            opacity: .8;
+            padding:10px
+   
+        }
+        
+        .quoteDiv{
+            display:flex;
+            width: 600px;
+            // border:1px solid blue;   
+            align-items: center;
+            justify-content: center;
+            margin-top: 4rem;
+                h4{
+                
+                    color:$primary-font-color;
+                    text-align: center;
+                    font-size: 27px;
+                    letter-spacing: 1px;
+                    font-weight:400;
+                    line-height: 30px;
+                    animation: alert 10s ease-in infinite;
+                        #quoteIcon{
+                        
+                        font-size: 50px;
+                    
+                        }
+                }
+        }
+        
+    }
+   
+    
+@keyframes alert {
+    0%{
+        opacity: 0;
+        transform: translateZ(0px);
+        
+    }
+    25%{
+        opacity: 100%;
+        transform: translateY(5px);
+    }
+    50%{
+        opacity: 100%;
+        transform: translateY(10px)
+
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+
+
+@media  screen and (max-width:400px) {
+    body{
+        background: $primary-color url('img/phoneWave.svg') no-repeat fixed ;
+    
+        background-size: cover;
+    }
+    .nav{
+        ul{
+            li{
+                a{
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .mainDiv{
+        height: 70vh;
+        .quoteDiv{
+            width: 300px;
+            h4{
+                font-size: 20px;
+            }
+        }
+    }
+}
